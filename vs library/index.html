@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lexora Library Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">LEXORA LIBRARY</div>
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('about')">About</button>
+        <button onclick="showPage('login')">Login</button>
+        <button onclick="showPage('register')">Register</button>
+        <button onclick="showPage('catalogue')">Visit Library</button>
+    </nav>
+</header>
+
+<section id="home" class="page active">
+    <div class="hero">
+        <h1>Welcome to Lexora Library</h1>
+        <p>
+        Discover Knowledge, Explore Ideas and Expand Your World.<br>
+        Your gateway to learning and knowledge.
+        </p>
+        <br>
+        <button class="btn" onclick="showPage('login')">Login</button>
+        <button class="btn" onclick="showPage('register')">Register</button>
+        <button class="btn" onclick="showPage('catalogue')">Just for Visit</button>
+    </div>
+
+    <h2 class="section-title">Explore Our Library</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Wide Collection</h3>
+            <p>Explore books from different subjects and topics.</p>
+        </div>
+        <div class="card">
+            <h3>Easy Search</h3>
+            <p>Find books easily using our search facility.</p>
+        </div>
+        <div class="card">
+            <h3>Learn Anytime</h3>
+            <p>Discover new ideas and improve your knowledge.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="page">
+    <h1 class="section-title">About Lexora Library</h1>
+    <div class="card">
+        <p>Lexora Library is a digital library platform designed to make learning simple and accessible.</p>
+        <br>
+        <p>Users can explore different subjects, browse topics, search for books and discover useful learning resources.</p>
+        <br>
+        <p>Our aim is to encourage reading, learning and knowledge sharing among students and readers.</p>
+    </div>
+</section>
+
+<section id="login" class="page">
+    <div class="form-box">
+        <h2>Member Login</h2>
+        <form onsubmit="loginUser(event)">
+            <input type="email" id="loginEmail" placeholder="Email Address" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button class="btn" type="submit">Login</button>
+        </form>
+        <p class="small">
+            Don't have an account?
+            <a href="#" onclick="showPage('register')">Register here</a>
+        </p>
+        <p class="small">Demo login: demo@lexora.com / 12345</p>
+    </div>
+</section>
+
+<section id="register" class="page">
+    <div class="form-box">
+        <h2>Create an Account</h2>
+        <form onsubmit="registerUser(event)">
+            <input type="text" id="regName" placeholder="Full Name" required>
+            <input type="email" id="regEmail" placeholder="Email Address" required>
+            <input type="password" id="regPassword" placeholder="Create Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <button class="btn" type="submit">Create Account</button>
+        </form>
+    </div>
+</section>
+
+<section id="catalogue" class="page">
+    <h1 class="section-title">Library Catalogue</h1>
+    <div class="card">
+        <h3>Explore Our Books</h3>
+        <p id="welcomeText">Welcome to Lexora Library!</p>
+        <br>
+        <input type="text" id="searchInput"
+        placeholder="Search by book, author, subject or topic..."
+        oninput="searchBooks()">
+
+        <select id="subjectFilter" onchange="filterBooks()">
+            <option value="all">All Subjects</option>
+        </select>
+        <p id="bookCount"></p>
+    </div>
+
+    <h2 class="section-title">Subjects</h2>
+    <div class="cards" id="subjects"></div>
+
+    <h2 class="section-title">Books</h2>
+    <div class="cards" id="results"></div>
+</section>
+
+<footer>
+    <p>© 2026 Lexora Library Management System</p>
+    <p>Knowledge is the Key to Success</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
